@@ -1,10 +1,4 @@
-/*
- *  Aurthor: Otto O Legon
- *  Project: RevYou Project
- *  Sub-Project: Video Upload and Download Utilities
- *  Class: VidDBManager
- *  Description: Graphical access for database management uing JavaFX as main graphics provider
- */
+
 package com.cloudinary.uploader;
 
 //Fx imports
@@ -30,15 +24,22 @@ import com.revyouviddb.VidDBManager;
 import com.revyouviddb.VideoDb;
 
 /**
- * @author Otto
- *
+ * Project: RevYou --  
+ * Sub-Project: Video Upload and Download Utilities --  
+ * Class: VidDBManager --  
+ * Description: Graphical access for database management using JavaFX as main graphics provider
+ * @author Otto O. Legon
+ * @version 2.0
+ * 
  */
 public class VideoUpload {
 	
 	//File Chooser (restricts to mp4 files)
 	/**
-	 * @param primarystage
-	 * @return
+	 * Allows user to search for and select an mp4 file
+	 * @param primarystage a JavaFX Stage where application is running
+	 * @return file - a JavaIO File representing chosen file
+	 * 
 	 */
 	public static File getFileToUpload(Stage primarystage){
 		FileChooser chooser = new FileChooser();
@@ -51,7 +52,9 @@ public class VideoUpload {
 	
 	//Uploader
 	/**
-	 * @param file
+	 * Uploads an mp4 file to cloudinary server
+	 * @param file a JavaIO File representing chosen file
+	 * 
 	 */
 	public static void uploadFile(File file){
 		//Sets path to cloudinary
@@ -74,8 +77,10 @@ public class VideoUpload {
 	
 	//Returns URL 
 	/**
-	 * @param videoObject
-	 * @return
+	 * Obtains URL of desired video
+	 * @param videoObject a VideoDb object representing desired video
+	 * @return webLoc - a JavaNET URL object representing video location on cloudinary server
+	 * 
 	 */
 	public static URL downloadFile(VideoDb videoObject){
 		String url = videoObject.getVideoUrl();

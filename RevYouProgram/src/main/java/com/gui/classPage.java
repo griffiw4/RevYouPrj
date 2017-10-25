@@ -35,14 +35,8 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 
 /**
- * @author Lana Adams ft. Otto
- * @version 1.0
- * @created 10-Oct-2017
- */
-
-/**
- * @author Otto
- *
+ * @author Lana Adams ft. Otto O. Legon
+ * @version 1.2
  */
 public class classPage extends Application {
 

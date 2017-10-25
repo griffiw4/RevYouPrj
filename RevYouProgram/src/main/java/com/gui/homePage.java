@@ -26,14 +26,8 @@ import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
- * @author Lana Adams ft. Otto
- * @version 1.0
- * @created 10-Oct-2017
- */
-
-/**
- * @author Otto
- *
+ * @author Lana Adams ft. Otto O. Legon
+ * @version 1.2
  */
 public class homePage extends Application {
 	

@@ -46,99 +46,101 @@ import org.jdesktop.observablecollections.ObservableCollections;
 
 
 /**
- * @author Otto
- * Project: RevYou Project
- * Sub-Project: DBControls For Video
- * Class: VidDBManager
+ * Project: RevYou --  
+ * Sub-Project: DBControls For Video --  
+ * Class: VidDBManager --  
  * Description: Graphical access for database management using JavaFX as main graphics provider
+ * @author Otto O. Legon
+ * @version 2.0
+ * 
  */
 public class VidDBManager extends Application {
     
     //Persistance Attributes
     /**
-     * 
+     * Represents the entity manager for the relational database table
      */
     private EntityManager entityManager;
     /**
-     * 
+     * Represents the current query
      */
     private Query query;
     /**
-     * 
+     * Contains the rows/entities in relational database table, which are VideoDb objects
      */
     private List<VideoDb> list;
     
     //FX Attributes
         //Layout vars
     /**
-     * 
+     * The scene for the admin gui
      */
     private Scene primaryScene;
     /**
-     * 
+     * The root for the primary scene
      */
     private BorderPane primaryPane;
         //Table vars
     /**
-     * 
+     * Observable list of entities for table to display
      */
     ObservableList<VideoDb> entityList;
     /**
-     * 
+     * The gui table representing the table in relational database
      */
     @FXML private TableView<VideoDb> masterTable;
     /**
-     * 
+     * The primary key/ID value for the next row/entity/video to be added
      */
     private short nextIDValue;
         //Column vars
     /**
-     * 
+     * Binded column for ID 
      */
     private TableColumn<VideoDb, Integer> idField;
     /**
-     * 
+     * Binded column for owner
      */
     private TableColumn<VideoDb, String> ownerField;
     /**
-     * 
+     * Binded column for URL
      */
     private TableColumn<VideoDb, String> videoURLField;
     /**
-     * 
+     * Binded column for visibility
      */
     private TableColumn<VideoDb, Boolean> visibilityField;
     /**
-     * 
+     * Binded column for description
      */
     private TableColumn<VideoDb, String> descriptionField;
     /**
-     * 
+     * Binded column for video name
      */
     private TableColumn<VideoDb, String> videoNameField;
     /**
-     * 
+     * Binded column for tags
      */
     private TableColumn<VideoDb, String> tagsField;
     /**
-     * 
+     * Binded column for comments
      */
     private TableColumn<VideoDb, String> commentsURLField;
         //Button vars
     /**
-     * 
+     * Button to edit selected row
      */
     /**
-     * 
+     * Button to add new row
      */
     /**
-     * 
+     * Button to delete selected row
      */
     /**
-     * 
+     * Button to refresh gui and entity list
      */
     /**
-     * 
+     * Button to save changes done in program to relational database 
      */
     private Button 
             editButton,
@@ -159,7 +161,7 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * 
+     * Constructor which calls setup
      */
     public VidDBManager(){
     	setup();
@@ -167,7 +169,7 @@ public class VidDBManager extends Application {
     
     //Application setup. Defines aplication attributes, calls main GUI construction method
     /**
-     * 
+     * Connects to database and defines fields
      */
     private void setup(){
         //Persistance setup
@@ -339,7 +341,7 @@ public class VidDBManager extends Application {
     
     //**************private aditional setup methods
     /**
-     * 
+     * Updates what the next primary key/ID value should be
      */
     private void setNextIDValue(){
         refresh();
@@ -352,7 +354,7 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * 
+     * Creates a visible gui for this application
      */
     private void createGUI(){ 
         //Top
@@ -381,7 +383,7 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * 
+     * Refreshes table in gui with the values saved in relational database table
      */
     private void resetTable(){
         entityList = FXCollections.observableArrayList(list);
@@ -392,8 +394,11 @@ public class VidDBManager extends Application {
     
     //**************private actions methods to update real database
     /**
-     * @param row
-     * @param url
+     * Called to edit information of a video when an new video is added from another class.
+     * Requires the URL to be specified before hand.
+     * @param row an integer representing the index of the new row to be created
+     * @param url a String representing URL location of video file in cloudinary server
+     * 
      */
     private void editRow(int row, String url){
         final VideoDb v = list.get(row);
@@ -458,7 +463,9 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * @param row
+     * Called to enter information of new video or to edit info of existing video
+     * @param row an integer representing the index of the new row to be created or the index of the currently selected row
+     * 
      */
     private void editRow(int row){
         final VideoDb v = list.get(row);
@@ -526,7 +533,7 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * 
+     * Called to add video to database
      */
     private void newRow(){
         setNextIDValue();
@@ -538,7 +545,10 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * @param row
+     * Deletes selected row/video in application.
+     * Does not persist changes into database.
+     * @param row an integer represents index of the selected row/video
+     * 
      */
     private void deleteRow(int row){
         VideoDb v = list.get(row);
@@ -548,7 +558,7 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * 
+     * Persists changes in application into database
      */
     private void save(){
         try {
@@ -570,7 +580,7 @@ public class VidDBManager extends Application {
     }
     
     /**
-     * 
+     * Refreshes application gui to reflect database table
      */
     private void refresh(){
         entityManager.getTransaction().rollback();
@@ -587,14 +597,16 @@ public class VidDBManager extends Application {
     
     //**************Getters and Setters and public methods
     /**
-     * @return
+     * @return list - a List containing video entities in database 
      */
     public List getList(){
     	return list;
     }
     
     /**
-     * @param url
+     * Adds a video that has been uploaded to cloudinary server to database
+     * @param url JavaNET URL representing location of video in cloudinary server
+     * 
      */
     public void newVideo(String url){
         setNextIDValue();
@@ -608,7 +620,9 @@ public class VidDBManager extends Application {
     
     //Application launch
     /**
-     * @param args
+     * Runs application for Admins
+     * @param args - Arguments for execution
+     * 
      */
     public static void main(String[] args) {
         launch(args);
