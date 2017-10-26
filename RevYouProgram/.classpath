@@ -40,5 +40,7 @@
 	<classpathentry kind="lib" path="src/main/resources/org-netbeans-modules-j2ee-eclipselink.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/org.eclipse.persistence.jpa.jpql_2.5.2.v20140319-9ad6abd.jar"/>
 	<classpathentry kind="lib" path="src/main/resources/postgresql-9.2-1002.jdbc4.jar"/>
+	<classpathentry kind="lib" path="F:/Default user/Documents/5 semester Fall 2017/5th semester Fall 2017/Juancho/SE300/jave-1.0.2.jar/jave-1.0.2.jar"/>
+	<classpathentry kind="lib" path="F:/Default user/Documents/5 semester Fall 2017/5th semester Fall 2017/Juancho/SE300/jave-1.0.2-src.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
