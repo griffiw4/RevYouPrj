@@ -3,7 +3,23 @@ package com.videototext;
 import java.io.File;
 import it.sauronsoftware.jave.*;
 
+/**
+ * Project: RevYou --  
+ * Sub-Project: Downloadable transcripts --  
+ * Class: VideoTuAudio --  
+ * Description: Video to audio converter 
+ * @author Juan Ortiz Couder
+ * @version 1.0
+ * 
+ */
+
 public class VideoTuAudio {
+	
+	/**
+	 * gets selected input video and using the most common parameters for .wav files, it converts it to a audio file and saves it.
+	 * @param video - a video that wants to be changed into transcripts
+	 * @return Audio - an audio file that will later be converted into transcripts
+	 */
 	
 	public static void ConvertToAudio(File video){
 		
