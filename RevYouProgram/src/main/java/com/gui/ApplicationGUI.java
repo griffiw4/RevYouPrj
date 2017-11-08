@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 /**
  * @author Lana Adams
  * @version 1.20
+ * gitQuiz
  */
 public class ApplicationGUI extends Application {
 
