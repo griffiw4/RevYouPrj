@@ -7,7 +7,7 @@ import it.sauronsoftware.jave.*;
  * Project: RevYou --  
  * Sub-Project: Downloadable transcripts --  
  * Class: VideoTuAudio --  
- * Description: Video to audio converter 
+ * Description: Video to audio converterr 
  * @author Juan Ortiz Couder
  * @version 1.0
  * 
