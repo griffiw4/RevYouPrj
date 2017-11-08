@@ -16,7 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
- * @author Lana Adams
+ * @author Lana Adams ft Otto
  * @version 1.200
  * 
  */
